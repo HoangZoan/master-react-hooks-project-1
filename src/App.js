@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Joke from "./Joke";
 
 function App() {
+  const [userQuery, setUserQuery] = useState("");
+
+  const updateUserQuery = (event) => {
+    setUserQuery(event.target.value);
+  };
+
+  const searchQuery = () => {
+    window.open(`https://goole.com/search?q=${userQuery}`);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello</h1>
+      <div className="form">
+        <input value={userQuery} onChange={updateUserQuery} />
+        <button onClick={searchQuery}>Search</button>
+      </div>
+      <hr />
+      <Joke />
     </div>
   );
 }
