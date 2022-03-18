@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Joke from "./Joke";
+// import Joke from "./Joke";
 import Task from "./Task";
 import Gallery from "./Gallery";
 import Matrix from "./Matrix";
@@ -28,7 +28,7 @@ function App() {
         <button onClick={searchQuery}>Search</button>
       </div>
       <hr />
-      <Joke />
+      {/* <Joke /> */}
       <hr />
       <Task />
       <hr />
